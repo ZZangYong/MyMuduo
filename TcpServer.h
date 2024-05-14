@@ -62,7 +62,7 @@ private:
     const std::string name_; // 名字
 
     std::unique_ptr<Acceptor> acceptor_; // 运行在mainLoop，任务就是监听新连接事件
-    std::shared_ptr<EventLoopThreadPool> threadPool_; // 线程池，one loop per thread
+    std::unique_ptr<EventLoopThreadPool> threadPool_; // 线程池，one loop per thread
 
     ConnectionCallback connectionCallback_; // 有新连接时的回调
     MessageCallback messageCallback_; // 有读写消息时的回调
